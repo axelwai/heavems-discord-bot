@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"start": "node index.js"
 	},
 	"repository": {
 		"type": "git",
@@ -16,5 +16,10 @@
 	"bugs": {
 		"url": "https://github.com/axelwai/heavems-discord-bot/issues"
 	},
-	"homepage": "https://github.com/axelwai/heavems-discord-bot#readme"
+	"homepage": "https://github.com/axelwai/heavems-discord-bot#readme",
+	"dependencies": {
+		"discord.js": "^12.5.3",
+		"dotenv": "^8.2.0",
+		"mysql": "^2.18.1"
+	}
 }
