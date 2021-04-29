@@ -23,7 +23,12 @@ async function tick() {
 	const online = (await db.query('SELECT COUNT(*) AS count FROM accounts where loggedin = 2'))[0];
 	// const accounts = db.query('SELECT COUNT(*) AS count FROM accounts');
 	// const characters = db.query('SELECT COUNT(*) AS count FROM characters');
-	await bot.user.setActivity(`with ${online.count} user${(online.count > 1 ? 's' : '')} online`);
+	if(online.count) {
+		await bot.user.setActivity(`with ${online.count} user${(online.count > 1 ? 's' : '')} online`);
+	}
+	else {
+		await bot.user.setActivity(`alone :(`);
+	}
 
 	setTimeout(tick, 1000 * 30);
 }
